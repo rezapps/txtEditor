@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
 import { io, Socket } from 'socket.io-client'
 
 import 'react-quill/dist/quill.snow.css';
 
 export default function TxtEditor() {
 	const [socket, setSocket] = useState<Socket | null>(null);
-	const [text, setText] = useState('');
+	const [contents, setContents] = useState('');
 
 
 
@@ -22,22 +22,28 @@ export default function TxtEditor() {
 	}, [])
 
 
-	// useEffect(() => {
-	// 	if ( socket == null || text == null ) return
-	// 	const syncEditor = (delta) {
+	useEffect(() => {
+		if ( socket == null) return
 
-	// 	}
-	// })
+		const syncEditor = (delta:any) => {
+			setContents(delta)
+		}
+
+		socket.on('receive-delta', syncEditor)
+
+
+	}, [socket])
 
 
 	const handleChange = (html: any, delta: any, source: any, editor: any) => {
-		setText(html);
+
+		const txtDelta = editor.getContents()
+		setContents(txtDelta);
+		console.log('editor get contents: ', txtDelta)
 
 		if (socket && source == 'user') {
-			socket.emit('send-delta', delta)
+			socket.emit('send-delta', txtDelta)
 
-			// console.log('delta ops: ', delta.ops)
-			console.log('editor: ', editor)
 		}
 
 	};
@@ -55,7 +61,7 @@ export default function TxtEditor() {
 	return <
 		ReactQuill theme="snow"
 		modules={modules}
-		value={text}
+		value={contents}
 		onChange={handleChange}
 	/>;
 }
