@@ -1,0 +1,13 @@
+node_modules/
+.env
+.vscode
+.editorconfig
+tsconfig.json
+package-lock.json
+tsconfig.node.json
+vite.config.ts
+
+log
+.log
+*.log
+.vite-env.d.ts
