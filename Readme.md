@@ -6,7 +6,7 @@ Testing with Jest, SuperTest, Testing-Library.
 
 
 ### Built With
-![Stacks](https://skills.thijs.gg/icons?i=mongodb,express,react,nodejs,jest,vite)  <img src="./rtl.png" width="44px" height="44px" style="border-radius:10px; border:2px solid #990000">
+![Stacks](https://skills.thijs.gg/icons?i=mongodb,express,react,nodejs,jest,vite)  <img src="./rtl.png" width="44px" height="44px">
   
 
 ### clone project and install all dependencies: 
