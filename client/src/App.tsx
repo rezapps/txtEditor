@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import TxtEditor from './components/TxtEditor'
+import Dashboard from './pages/Dashbord'
+
 
 function App() {
 
 	return (
-		<div className="App">
-			<TxtEditor />
-		</div>
+		<Router>
+
+			<Routes>
+				<Route path='/' element={<Dashboard />} />
+				<Route path='/editor/:id' element={<TxtEditor />} />
+			</Routes>
+
+		</Router>
 	)
 }
 
