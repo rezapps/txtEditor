@@ -20,5 +20,4 @@ router.patch('/:id', upd8Doc);
 router.delete('/:id', delDoc);
 
 
-
-module.exports = router;
+export default router;

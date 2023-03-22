@@ -20,8 +20,4 @@ const docSchema = new Schema({
     timestamps: true
 })
 
-
 module.exports = mongoose.model('doc', docSchema);
-
-// then we can use doc methods lik:
-// doc.find()

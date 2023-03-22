@@ -1,17 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import TxtEditor from './components/TxtEditor'
-import Dashboard from './pages/Dashbord'
+import Editor from './pages/Editor'
+import Dashboard from './pages/Dashboard'
+
 
 
 function App() {
 
 	return (
 		<Router>
-
-			<Routes>
-				<Route path='/' element={<Dashboard />} />
-				<Route path='/editor/:id' element={<TxtEditor />} />
-			</Routes>
+			<div className="container">
+				<Routes>
+					<Route path='/' element={<Dashboard />} />
+					<Route path='/editor/:id' element={<Editor />} />
+				</Routes>
+			</div>
 
 		</Router>
 	)

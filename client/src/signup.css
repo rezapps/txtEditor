@@ -1,0 +1,25 @@
+.signupForm {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	margin: 1rem auto;
+	border: 1px solid #ccc;
+	padding: 1rem;
+}
+
+
+.signupForm input {
+	max-width: 100%;
+	margin: 0.2rem auto;
+	width: 90%;
+	line-height: 1.6rem;
+}
+
+
+.signupForm .submitbtn {
+	display: inline;
+	text-align: center;
+	line-height: normal;
+	height: 2rem;
+	font-weight: bold;
+}

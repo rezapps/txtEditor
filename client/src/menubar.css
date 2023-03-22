@@ -1,0 +1,88 @@
+@import './assets/icomoon/style.css';
+
+/* dropdown menu */
+.input-select select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	padding: .5rem;
+	font-size: inherit;
+	line-height: 110%;
+	font-family: inherit;
+	color: inherit;
+	outline: none;
+	border: none;
+	color: #1f1e1e;
+
+}
+
+.input-select option {
+	height: fit-content;
+	overflow-y: hidden;
+}
+
+.input-select option:first-child {
+	visibility: hidden;
+	height: .4rem;
+	font-size: 5px;
+}
+
+.input-select {
+	display:flex;
+	flex-direction: column;
+	margin-top: 4px;
+}
+
+.navBtn {
+    margin: 0 1rem;
+    padding-top: 0.4rem;
+}
+
+.btn-danger {
+	background-color: orangered;
+	color: #e6e1e1;
+}
+
+.menuBar {
+	display: flex;
+	align-items: center;
+}
+.menuBar .logo {
+	width: 44px;
+	height: 52px;
+	float: left;
+	margin: .4rem;
+}
+
+
+input {
+    padding: .5rem;
+	height: 1.8rem;
+	border: 1px solid #ccc;
+	border-radius: .3rem;
+}
+
+input:focus{
+    border: 1px solid gray;
+}
+
+.docTitleInput {
+    clear: both;
+    margin: 1rem 1rem 1rem 52px;
+}
+
+
+.navbar {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

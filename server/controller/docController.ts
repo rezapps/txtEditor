@@ -1,8 +1,9 @@
+import { Request, Response, NextFunction } from 'express';
+import mongoose from 'mongoose';
 const Doc = require('../models/Docmnt');
-const mongoose = require('mongoose');
 
 // Get all Docs
-const getDox = async (req, res, next) => {
+const getDox = async (req: Request, res: Response, next: NextFunction) => {
     // getting docs and sorting them by created time
     const dox = await Doc.find({}).sort({createdAt: -1});
 
@@ -11,7 +12,7 @@ const getDox = async (req, res, next) => {
 }
 
 // Get single Doc
-const getDoc = async (req, res) => {
+const getDoc = async (req: Request, res: Response) => {
     const {id} = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -25,8 +26,8 @@ const getDoc = async (req, res) => {
 
 
 // Create new Doc
-const cr8Doc = async (req, res) => {
-    // in server.js we defined app.use(express.json())
+const cr8Doc = async (req: Request, res: Response) => {
+    // in server.ts we defined app.use(express.json())
     // so we have access to all req.body
     // so we can destructure req.body
     const {title, text} = req.body;
@@ -36,7 +37,7 @@ const cr8Doc = async (req, res) => {
         const doc = await Doc.create({title, text});
         res.status(200).json(doc);
 
-    } catch(error) {
+    } catch(error:any) {
         res.status(400).json({error: error.message})
     }
 
@@ -46,7 +47,7 @@ const cr8Doc = async (req, res) => {
 
 
 // Delete a Doc
-const delDoc = async (req, res) => {
+const delDoc = async (req: Request, res: Response) => {
     const {id} = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -61,7 +62,7 @@ const delDoc = async (req, res) => {
 
 
 // Update a Doc
-const upd8Doc = async (req, res) => {
+const upd8Doc = async (req: Request, res: Response) => {
     const {id} = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {

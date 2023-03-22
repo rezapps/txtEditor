@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import './menubar.css';
+@import './font.css';
+@import './editor.css';
+@import './signup.css';
 
 *,
 *::before,
@@ -7,103 +10,29 @@
 }
 
 body {
-	background-color: #F3F3F3;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	margin: 0;
 
 }
 
-
-.quill .ql-editor {
-	width: 8.5in;
-	min-height: 11in;
-	padding: 1in;
-	margin: 1rem;
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
-	background-color: #fff;
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
-.quill .ql-container.ql-snow {
-	border: none;
-	display: flex;
-	justify-content: center;
+.docTitle,
+.docUpd8,
+.docUser {
+    width: calc(100% / 3)
 }
-
-
-.quill .ql-toolbar.ql-snow {
-	display: flex;
-	justify-content: center;
-	position: sticky;
-	top: 0;
-	z-index: 1;
-	background-color: #F3F3F3;
-	border: none;
-	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
-
-}
-
-@page {
-	margin: 1in;
-}
-
-@media print {
-	body {
-		background: none;
-
-	}
-
-	.quill .ql-editor {
-		margin: 0;
-		padding: 0;
-		top: 0;
-		box-shadow: none;
-	}
-
-	.quill .ql-toolbar.ql-snow {
-		display: none;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 a {
 	text-decoration: none;
 	color: #000;
 }
-
 
 
 .header {
@@ -159,7 +88,6 @@ a {
 	margin-bottom: 10px;
 }
 
-.form-group input,
 .form-group textarea,
 .form-group select {
 	width: 100%;
@@ -176,39 +104,6 @@ a {
 	margin: 0 0 5px 3px;
 }
 
-.btn {
-	padding: 10px 20px;
-	border: 1px solid #000;
-	border-radius: 5px;
-	background: #000;
-	color: #fff;
-	font-size: 16px;
-	font-weight: 700;
-	cursor: pointer;
-	text-align: center;
-	appearance: button;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.btn svg {
-	margin-right: 8px;
-}
-
-.btn-reverse {
-	background: #fff;
-	color: #000;
-}
-
-.btn-block {
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-.btn:hover {
-	transform: scale(0.98);
-}
 
 
 
@@ -250,40 +145,6 @@ a {
 	width: calc(100% / 3)
 }
 
-.docTitle {
-	text-align: left;
-	padding-left: 2rem;
-
-}
-
-
-
-nav ul {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-}
-
-.navBtn {
-	margin: 0 1rem;
-	padding-top: 0.4rem;
-}
-
-
-.docTitleInput {
-	float: left;
-	clear: both;
-	margin: 1rem;
-}
-
-input {
-	border: 1px solid transparent;
-	padding: 3px;
-}
-
-input:focus {
-	border: 1px solid gray;
-}
 
 
 @media (max-width: 600px) {
