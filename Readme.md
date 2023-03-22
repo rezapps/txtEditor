@@ -25,7 +25,7 @@ then open "http://localhost:3000/api/docs" in your browser
 `cd client && npm run dev`  
 and open "http://localhost:5137/" in your browser
 
-### testing
+### testing is not done yet but:
 1. to run test for server with code-coverage:     
 `cd server && npm run test`  
 
