@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 function MenuBar({ ...props }) {
@@ -7,7 +7,7 @@ function MenuBar({ ...props }) {
 	const new_id = `${uuidv4()}`;
 
 	const handleOptions = (v: string) => {
-		const ttl:any = `<h1>${props.title}</h1>`
+		const ttl: any = `<h1>${props.title}</h1>`
 
 		const prntWindow: any = window.open(
 			"",
@@ -15,7 +15,7 @@ function MenuBar({ ...props }) {
 			"status=1,width=700,height=650"
 		);
 
-		const slct:any = document.getElementById("slct");
+		const slct: any = document.getElementById("slct");
 		if (slct) {
 			slct.selectedIndex = 0;
 		}
@@ -87,24 +87,34 @@ function MenuBar({ ...props }) {
 
 	return (
 		<div className='menuBar'>
-			<img className="logo" src="/src/assets/txtedit.png" />
+			<div className='logo-input'>
+				<Link to="/"><img className="logo" src="/src/assets/txtedit.png" /></Link>
 
-			<div className="input-select">
-				<input
-					type='text'
-					value={props.title}
-					onChange={(e) => props.handleTitleChange(e.target.value)}
-					required
-				/>
-				<select id="slct" onChange={(e) => handleOptions(e.target.value)}>
-					<option value="" defaultValue={''}>File</option>
-					<option style={{ 'fontFamily': 'icomoon' }} value="new">&#xe926;   New</option>
-					<option style={{ 'fontFamily': 'icomoon' }} value="save">&#xe962;   Save</option>
-					<option style={{ 'fontFamily': 'icomoon' }} value="print">&#xe954;   Print</option>
-					<option style={{ 'fontFamily': 'icomoon' }} value="dnlod">&#xe9c7;    Download</option>
-					<option style={{ 'fontFamily': 'icomoon' }} value="delete">&#xe9ac;    Delete</option>
-					<option style={{ 'fontFamily': 'icomoon' }} value="email">&#xe903;   Email</option>
-				</select>
+				<div className="input-select">
+					<input
+						type='text'
+						value={props.title}
+						onChange={(e) => props.handleTitleChange(e.target.value)}
+						required
+					/>
+					<select id="slct" onChange={(e) => handleOptions(e.target.value)}>
+						<option value="" defaultValue={''}>File</option>
+						<option style={{ 'fontFamily': 'icomoon' }} value="new">&#xe926;   New</option>
+						<option style={{ 'fontFamily': 'icomoon' }} value="save">&#xe962;   Save</option>
+						<option style={{ 'fontFamily': 'icomoon' }} value="print">&#xe954;   Print</option>
+						<option style={{ 'fontFamily': 'icomoon' }} value="dnlod">&#xe9c7;    Download</option>
+						<option style={{ 'fontFamily': 'icomoon' }} value="delete">&#xe9ac;    Delete</option>
+						<option style={{ 'fontFamily': 'icomoon' }} value="email">&#xe903;   Email</option>
+					</select>
+				</div>
+			</div>
+			<div className='editor-nav'>
+				<span>
+					<Link to ="">Invite</Link>
+				</span>
+				<span>
+					<Link to="/">Logout</Link>
+				</span>
 			</div>
 		</div>
 	);

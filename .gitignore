@@ -6,8 +6,10 @@ tsconfig.json
 package-lock.json
 tsconfig.node.json
 vite.config.ts
+.rest
 
 log
 .log
 *.log
 vite-env.d.ts
+*.rest

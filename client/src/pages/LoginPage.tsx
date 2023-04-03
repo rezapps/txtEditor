@@ -1,14 +1,15 @@
 import Header from '../components/Header';
+import Login from "../components/Login";
 
-const Home = () => {
-
+const LoginPage = () => {
 
 	return (
 		<div>
 			<Header />
 			<section>
 				<div>
-					Please login to edit texts.
+					<h1>Login </h1>
+					<Login />
 				</div>
 			</section>
 		</div>
@@ -16,4 +17,4 @@ const Home = () => {
 
 }
 
-export default Home
+export default LoginPage

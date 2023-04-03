@@ -7,6 +7,10 @@ import { v4 as uuidv4 } from 'uuid';
 import TxtEditor from "../components/TxtEditor";
 import MenuBar from "../components/MenuBar";
 
+
+
+
+
 const Editor = () => {
 
 	const [socket, setSocket] = useState<Socket | null>(null);
@@ -18,7 +22,7 @@ const Editor = () => {
 
 	const [prnt, setPrnt] = useState<any>()
 
-	const url = 'http://localhost:3000'
+	const url = import.meta.env.VITE_API_URL
 
 	useEffect(() => {
 
@@ -141,16 +145,14 @@ const Editor = () => {
 
 	return(
 		<>
-			<div className='navbar'>
-				<MenuBar
-					title={title}
-					handleTitleChange={handleTitleChange}
-					saveDoc={saveDoc}
-					delDoc={delDoc}
-					mailDoc={mailDoc}
-					prnt={prnt}
-				/>
-			</div>
+			<MenuBar
+				title={title}
+				handleTitleChange={handleTitleChange}
+				saveDoc={saveDoc}
+				delDoc={delDoc}
+				mailDoc={mailDoc}
+				prnt={prnt}
+			/>
 			<TxtEditor handleChange ={handleChange} contents={contents}/>
 		</>
 	);

@@ -1,18 +1,31 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useIsAuthenticated } from 'react-auth-kit';
+import { useSignOut } from 'react-auth-kit'
+
+const Logout = () => {
+	const signOut = useSignOut()
+
+	return (
+		<a onClick={() => signOut()} >Logout</a>
+	)
+}
+
 
 const Header = () => {
+
+	const isAuthenticated = useIsAuthenticated()
+
 	return (
 		<header className="header">
-			<div className="logo">
-				<Link to="/">TxtEditor</Link>
+			<div>
+				<Link to="/"><img className="logo" src="/src/assets/txtedit.png" /></Link>
 			</div>
-			<ul className="nav">
-				<li>Logout</li>
-				<li>Login</li>
-				<li>
-					<Link to="/signup">Register</Link>
-				</li>
-			</ul>
+				<Link to="/signup">Register</Link>
+
+				{isAuthenticated() &&
+					<Logout />
+				}
+
 		</header>
 	)
 }

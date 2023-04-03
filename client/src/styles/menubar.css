@@ -1,4 +1,4 @@
-@import './assets/icomoon/style.css';
+@import './icomoon/style.css';
 
 /* dropdown menu */
 .input-select select {
@@ -48,8 +48,9 @@
 .menuBar {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 }
-.menuBar .logo {
+.logo {
 	width: 44px;
 	height: 52px;
 	float: left;
@@ -73,16 +74,15 @@ input:focus{
     margin: 1rem 1rem 1rem 52px;
 }
 
+.logo-input {
+	max-width: 70%;
+	width: 280px;
+}
 
-.navbar {
+.editor-nav {
 	display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+	justify-content: space-between;
+	max-width: 25%;
+	width: 170px;
 }
 
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}

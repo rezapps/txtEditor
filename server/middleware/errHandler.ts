@@ -1,15 +1,14 @@
-const errHandler = (err, req, res, next) => {
-    const statusCode = res.statusCode ? res.statusCode : 500;
+import { Request, Response, NextFunction } from 'express';
 
-    res.status(statusCode);
+const errHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
+	const statusCode = res.statusCode ? res.statusCode : 500;
 
-    res.json({
-        message: err.message,
-        stack: process.env.NODE_ENV === 'production' ? null : err.stack
+	res.status(statusCode);
 
-    })
-}
+	res.json({
+		message: err.message,
+		stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+	});
+};
 
-module.exports = {
-    errHandler
-}
+export { errHandler };

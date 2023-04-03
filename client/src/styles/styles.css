@@ -2,6 +2,8 @@
 @import './font.css';
 @import './editor.css';
 @import './signup.css';
+@import './tab.css';
+@import './signform.css';
 
 *,
 *::before,
@@ -10,14 +12,29 @@
 }
 
 body {
+	background: #d4cece;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	margin: 0;
+	color: white;
 
 }
 
+
+h1 {
+	font-weight: 100;
+	color: white;
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+
+p {
+	color: #bf1650;
+}
+
 .container {
-    width: 100%;
-    max-width: 960px;
+    width: 95%;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
@@ -114,6 +131,9 @@ a {
 
 }
 
+a:hover {
+	cursor: default;
+}
 
 .docInfo {
 	font-size: large;
